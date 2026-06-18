@@ -143,13 +143,11 @@ Since we want to avoid breaking anything via bash automations, you can apply thi
 
 You can apply the permanent patch automatically using the verified script stored in this repository. Open your terminal in your **main ComfyUI root directory** and execute this single command:
 
+### 🚀 Automated Hotfix Script
+
+You can view or copy the entire verification and patching script directly below. To run it, you can save these lines into a local file (e.g., `patch.sh`) inside your **main ComfyUI root directory**, make it executable, and run it:
+
 ```bash
-curl -sSL https://githubusercontent.com | bash
-```
-
-*(Note: Make sure to replace `YOUR_GITHUB_USERNAME` in the link with your actual GitHub username!)*
-
----
 #!/bin/bash
 
 # ==============================================================================
@@ -162,8 +160,8 @@ echo "🔍 Starting BiRefNet path optimization..."
 # 1. Navigate to the absolute expected directory
 TARGET_DIR="custom_nodes/ComfyUI-BiRefNet-ZHO"
 
-if [ -d "$TARGET_DIR" ]; then
-    cd "$TARGET_DIR" || exit
+if [ -d "\$TARGET_DIR" ]; then
+    cd "\$TARGET_DIR" || exit
     
     # 2. Check if the conflicting utils.py exists
     if [ -f "utils.py" ]; then
@@ -180,10 +178,11 @@ if [ -d "$TARGET_DIR" ]; then
 
     echo "✅ Fix applied successfully! Please restart ComfyUI."
 else
-    echo "❌ Error: Directory '$TARGET_DIR' not found."
+    echo "❌ Error: Directory '\$TARGET_DIR' not found."
     echo "💡 Make sure to run this script from your main ComfyUI root directory!"
     exit 1
 fi
+```
 
 
 
