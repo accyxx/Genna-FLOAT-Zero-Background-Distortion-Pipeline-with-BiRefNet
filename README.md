@@ -1,24 +1,9 @@
-# 🚀 Genna & FLOAT: Zero Background Distortion Pipeline with BiRefNet
-
-This repository provides an optimized ComfyUI pipeline tailored for consumer and budget GPUs with **8GB VRAM**. It solves the common background warping/distortion issue encountered when using the FLOAT (Flow Matching for Audio-driven Talking Portrait) engine for dynamic avatar animations.
-
-By isolating Genna using `ComfyUI-BiRefNet-ZHO` prior to the animation stage, we ensure the surrounding environment remains 100% static, crisp, and pixel-perfect.
-
----
-
-## 🎯 The Core Logic
-
-Instead of feeding a full image into FLOAT, the process is split into three distinct phases to save VRAM and maintain quality:
-1. **Extraction:** BiRefNet cuts Genna out, creating a transparent Alpha channel.
-2. **Animation:** FLOAT animates *only* the isolated, background-free avatar.
-3. **Compositing:** The animated frame sequence is layered back onto the untouched, crisp original background.
-
-The Repository were using right here is ZHO-ZHO-ZHO >>> https://github.com/ZHO-ZHO-ZHO/ComfyUI-BiRefNet-ZHO
----
 
 # 🚀 Genna & FLOAT: Zero Background Distortion Pipeline with BiRefNet
 
 This repository provides optimized configurations and essential hotfixes tailored for running advanced generative pipelines on consumer and budget GPUs with **8GB VRAM**. 
+
+### The Repository were using right here is ZHO-ZHO-ZHO >>> https://github.com/ZHO-ZHO-ZHO/ComfyUI-BiRefNet-ZHO
 
 It specifically solves the common background warping/distortion issue encountered when using the FLOAT (Flow Matching for Audio-driven Talking Portrait) engine for dynamic avatar animations. By isolating Genna using `ComfyUI-BiRefNet-ZHO` prior to the animation stage, the surrounding environment remains 100% static, crisp, and pixel-perfect.
 
