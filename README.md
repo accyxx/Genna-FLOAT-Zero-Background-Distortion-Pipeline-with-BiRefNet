@@ -86,3 +86,49 @@ python main.py --lowvram --fp16-unet --fp16-vae --preview-method taesd --disable
 ```
 
 *Tip:* Place a `Purge VRAM` node right after the BiRefNet stage to unload the segmentation weights before the heavy FLOAT rendering starts.
+
+
+## 🛠️ Troubleshooting: BiRefNet ImportError Fix
+
+If you encounter the following startup error message in ComfyUI when loading the BiRefNet extension:
+`ImportError: cannot import name 'path_to_image' from 'utils'`
+
+This happens due to a naming collision where Python gets confused between the local `utils.py` inside the extension and the core ComfyUI utility files. You can use my quick code-patch to resolve this instantly.
+
+### ⚠️ Compatibility Disclaimer
+> [!IMPORTANT]
+> This fix is guaranteed to work if you are using the **exact same system specifications** or a very similar setup (Ubuntu 24.04.4 LTS, PyTorch 2.5.1+cu121). There is **no guarantee** if you are running newer, non-LTS releases like **Ubuntu 26.04**, as I specifically develop and test on the stable LTS 24.04.4 layer to ensure environment predictability.
+
+---
+
+### 🚀 How to Apply the Fix
+
+Since we want to avoid breaking anything via bash automations, you can apply this permanent local patch manually or via the terminal:
+
+1. **Navigate to the extension directory:**
+   ```bash
+   cd custom_nodes/ComfyUI-BiRefNet-ZHO
+   ```
+
+2. **Rename the conflicting utility file:**
+   Change the file name from `utils.py` to `biref_utils.py` so it no longer collides with ComfyUI's core files:
+   ```bash
+   mv utils.py biref_utils.py
+   ```
+
+<img width="675" height="315" alt="grafik" src="https://github.com/user-attachments/assets/3dde1c52-fe54-4264-94a0-aa89321ee946" />
+
+
+3. **Update the internal script imports:**
+   Open the files in your text editor and change the import paths, or use these two simple lines to swap them:
+   ```bash
+   sed -i 's/from utils import path_to_image/from biref_utils import path_to_image/g' dataset.py
+   sed -i 's/import utils/import biref_utils as utils/g' preproc.py
+   ```
+
+4. **Restart ComfyUI:**
+   Relaunch your ComfyUI instance. The `ImportError` will be gone, and the `🧹BiRefNet` nodes will load perfectly.
+
+*Note: Keep in mind that running `git pull` on this custom node in the future might cause a conflict because of the renamed file. If you update the node later, simply back up your workflow and re-apply these steps.*
+
+
