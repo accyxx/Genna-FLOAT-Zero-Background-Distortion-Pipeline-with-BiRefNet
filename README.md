@@ -151,7 +151,7 @@ You can view or copy the entire verification and patching script directly below.
 #!/bin/bash
 
 # ==============================================================================
-# 🚀 BiRefNet ImportError Hotfix for ComfyUI
+# 🚀 ACCYXX BiRefNet ImportError Hotfix for ComfyUI
 # Developed and tested on Ubuntu 24.04.4 LTS / PyTorch 2.5.1+cu121
 # ==============================================================================
 
