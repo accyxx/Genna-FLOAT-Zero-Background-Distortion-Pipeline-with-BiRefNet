@@ -152,7 +152,7 @@ curl -sSL https://githubusercontent.com | bash
 ---
 
 
-
+---
 # ==============================================================================
 # 🚀 BiRefNet ImportError Hotfix for ComfyUI
 # Developed and tested on Ubuntu 24.04.4 LTS / PyTorch 2.5.1+cu121
@@ -180,6 +180,7 @@ if [ -d "$TARGET_DIR" ]; then
     sed -i 's/import utils/import biref_utils as utils/g' preproc.py
 
     echo "✅ Fix applied successfully! Please restart ComfyUI."
+    ```
 else
     echo "❌ Error: Directory '$TARGET_DIR' not found."
     echo "💡 Make sure to run this script from your main ComfyUI root directory!"
