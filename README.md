@@ -165,6 +165,14 @@ fi
 
 
 
+### 🔄 How to Rollback (Undo the Fix)
+If you ever need to restore the original repository files, run this single command from your main ComfyUI root directory:
+
+```bash
+cd custom_nodes/ComfyUI-BiRefNet-ZHO && git checkout dataset.py preproc.py && mv biref_utils.py utils.py && cd ../..
+```
+
+
 
 *Note: Keep in mind that running `git pull` on this custom node in the future might cause a conflict because of the renamed file. If you update the node later, simply back up your workflow and re-apply these steps.*
 
