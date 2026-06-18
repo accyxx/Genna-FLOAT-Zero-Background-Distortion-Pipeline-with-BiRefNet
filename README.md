@@ -56,7 +56,7 @@ Instead of feeding a full image into FLOAT, the process is split into three dist
 
 ## 💾 Recommended Launch Flags for 8GB VRAM
 
-To prevent CUDA Out-of-Memory (OOM) crashes on 8GB GPUs,I always launch ComfyUI with the following optimization arguments, on my Tesla P4 8GB-Server GPU 
+To prevent CUDA Out-of-Memory (OOM) crashes on 8GB GPUs, I always launch ComfyUI with the following optimization arguments, on my Tesla P4 8GB-Server GPU 
 ```bash
 python main.py --lowvram --fp16-unet --fp16-vae --preview-method taesd --disable-smart-memory --disable-pinned-memory
 ```
