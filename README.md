@@ -66,7 +66,7 @@ Instead of feeding a full image into FLOAT, the process is split into three dist
 
 ## 💾 Optimization Command for Pascal Architecture (8GB VRAM)
 
-To prevent CUDA Out-of-Memory (OOM) crashes on the Tesla P4 or similar 8GB GPUs, always launch ComfyUI with the following optimization arguments:
+To prevent CUDA Out-of-Memory (OOM) crashes on the Tesla P4 or similar 8GB GPUs, I always launch ComfyUI with the following optimization arguments:
 ```bash
 python main.py --enable-manager-legacy-ui --lowvram --fp16-unet --fp16-vae --preview-method taesd --disable-smart-memory --disable-pinned-memory
 ```
