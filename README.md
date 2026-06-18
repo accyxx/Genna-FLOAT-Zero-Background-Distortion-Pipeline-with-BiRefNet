@@ -95,6 +95,14 @@ If you encounter the following startup error message in ComfyUI when loading the
 
 This happens due to a naming collision where Python gets confused between the local `utils.py` inside the extension and the core ComfyUI utility files. You can use my quick code-patch to resolve this instantly.
 
+
+### 🕵️‍♂️ Behind the Scenes: Some Hours of Deep Analysis
+
+This fix is the result of some hours of rigorous troubleshooting and log analysis to pinpoint the exact root cause of the crash. Thanks to a professional architectural breakdown by my AI collaborator, we fully deciphered the underlying mechanics of how Python's module resolution pathing and the latest Hugging Face `transformers` updates collided. 
+
+Instead of just applying a temporary bandage, we completely understood the system behavior and engineered a permanent, elegant solution that keeps your ComfyUI environment clean and stable.
+
+
 ### ⚠️ Compatibility Disclaimer
 > [!IMPORTANT]
 > This fix is guaranteed to work if you are using the **exact same system specifications** or a very similar setup (Ubuntu 24.04.4 LTS, PyTorch 2.5.1+cu121). There is **no guarantee** if you are running newer, non-LTS releases like **Ubuntu 26.04**, as I specifically develop and test on the stable LTS 24.04.4 layer to ensure environment predictability.
