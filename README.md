@@ -151,7 +151,7 @@ curl -sSL https://githubusercontent.com | bash
 
 ---
 
-#!/bin/bash
+
 
 # ==============================================================================
 # 🚀 BiRefNet ImportError Hotfix for ComfyUI
