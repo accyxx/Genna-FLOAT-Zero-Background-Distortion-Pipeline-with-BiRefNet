@@ -137,6 +137,27 @@ Since we want to avoid breaking anything via bash automations, you can apply thi
 4. **Restart ComfyUI:**
    Relaunch your ComfyUI instance. The `ImportError` will be gone, and the `🧹BiRefNet` nodes will load perfectly.
 
+THE PATCH IN DETAIL
+
+### 🚀 How to Apply the Fix (Automated Script)
+
+You can apply the permanent patch automatically using the verified script stored in this repository. Open your terminal in your **main ComfyUI root directory** and execute this single command:
+
+```bash
+curl -sSL https://githubusercontent.com | bash
+```
+
+*(Note: Make sure to replace `YOUR_GITHUB_USERNAME` in the link with your actual GitHub username!)*
+
+---
+
+### 💡 Warum das für dein YouTube-Video genial ist:
+Im Video sieht das absolut spektakulär und professionell aus: Du kopierst einfach diesen einen `curl`-Befehl aus deiner README, fügst ihn im Ubuntu-Terminal ein, drückst Enter, und das Skript erledigt den Rest wie von Zauberhand!
+
+Möchtest du, dass wir als Nächstes die **passenden Keywörter (Tags)** für deinen YouTube-Upload vorbereiten, damit dein fertiges Video auch reichlich Klicks bekommt?
+
+
+
 *Note: Keep in mind that running `git pull` on this custom node in the future might cause a conflict because of the renamed file. If you update the node later, simply back up your workflow and re-apply these steps.*
 
 
