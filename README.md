@@ -49,15 +49,6 @@ Instead of feeding a full image into FLOAT, the process is split into three dist
 
 ---
 
-## 💾 Optimization Command for Pascal Architecture (8GB VRAM)
-
-To prevent CUDA Out-of-Memory (OOM) crashes on the Tesla P4 or similar 8GB GPUs, I always launch ComfyUI with the following optimization arguments:
-```bash
-python main.py --enable-manager-legacy-ui --lowvram --fp16-unet --fp16-vae --preview-method taesd --disable-smart-memory --disable-pinned-memory
-```
-USE THE FLAGS - WORKING BEST FOR YOUR NEEDS
-
-*Tip:* Place a `Purge VRAM` node right after the BiRefNet stage to unload the heavy segmentation weights from the GPU memory before the intensive FLOAT rendering sequence begins.
 
 
 
@@ -69,6 +60,7 @@ To prevent CUDA Out-of-Memory (OOM) crashes on 8GB GPUs,I always launch ComfyUI 
 ```bash
 python main.py --lowvram --fp16-unet --fp16-vae --preview-method taesd --disable-smart-memory --disable-pinned-memory
 ```
+### USE THE FLAGS THAT WORKS BEST FOR YOU 
 
 *Tip:* Place a `Purge VRAM` node right after the BiRefNet stage to unload the segmentation weights before the heavy FLOAT rendering starts.
 
