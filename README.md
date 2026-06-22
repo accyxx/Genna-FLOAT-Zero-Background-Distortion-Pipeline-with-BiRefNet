@@ -17,7 +17,7 @@ It specifically solves the common background warping/distortion issue encountere
 
 ## 📺 YouTube Tutorial & Lab System Specifications
 
-In the [YouTube Video Linked to this Repo](YOUR_YOUTUBE_VIDEO_URL_HERE), I will show how to get the entire workflow running on **Ubuntu 24.04.4 LTS**. 
+In the [YouTube Video Linked to this Repo]([https://youtu.be/ueyygDeji-c]), I will show how to get the entire workflow running on **Ubuntu 24.04.4 LTS**. 
 
 The pipeline and optimizations were developed, patched, and benchmarked using the following specialized hardware and environment setup:
 
